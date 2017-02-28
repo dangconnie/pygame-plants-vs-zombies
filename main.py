@@ -6,6 +6,7 @@ import game_functions as gf;
 from pygame.sprite import Group, groupcollide;
 from zombie import Zombie;
 from square import Square;
+# from plant import Plant;
 
 # def init_vars():
 pygame.init();
@@ -22,6 +23,8 @@ plants = Group();
 squares = Group();
 bullets = Group();
 
+# plants.add(Plant(screen));
+
 # load up squares with our vars
 # we have 5 rows 
 for i in range(0,5):
@@ -31,8 +34,8 @@ for i in range(0,5):
 def run_game():
 	tick = 0;
 	while 1:
-		gf.check_events(screen, game_settings);
-		gf.update_screen(screen, game_settings, background, zombies);
+		gf.check_events(screen, game_settings, squares, plants, bullets);
+		gf.update_screen(screen, game_settings, background, zombies, squares, plants, bullets, tick);
 		# for event in pygame.event.get():
 		# 	if event.type == pygame.QUIT:
 		# 		sys.exit()
@@ -40,6 +43,9 @@ def run_game():
 		tick += 1;
 		if tick % 30 == 0:
 			zombies.add(Zombie(screen, game_settings.zombie_speed, game_settings.zombie_health));
+		# for plant in plants:
+		# 	plant.draw_me();
+
 		pygame.display.flip();
 
 # init_vars();
