@@ -1,0 +1,21 @@
+Tasks
+
+
+Randomize the rows the zombies are in
+
+[2:54]  
+Currenlly, zombies are made in game.py on the tick, but you can change it's rect.y inside zombie.py
+
+[2:54]  
+Add groupcollide to bullets/zombies
+
+[2:55]  
+Remove bullets when they go off the screen
+
+[2:56]  
+Add a new plan (gatlin gun is in the images folder), or make the repeater (double speed peashooter)
+
+
+
+Notes:
+-we had to change bullet stats from boolean to integer. Otherwise, once the bellsprout hits a zombie, it won't fire again until a new one is created in that row.

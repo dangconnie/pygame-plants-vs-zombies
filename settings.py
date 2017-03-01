@@ -14,8 +14,8 @@ class Settings():
 		self.squares = {
 			"start_left": 367,
 			"start_top": 246,
-			"square_width": 110,
-			"square_height": 105,
+			"square_width": 90,
+			"square_height": 90,
 			"rows":[
 				245,
 				350,
@@ -23,5 +23,14 @@ class Settings():
 				560, 
 				665
 			]
-		}
+		};
+		self.highlighted_square = 0;
+		# there are no zombies in any row at the beginning
+		self.zombie_in_row = [
+			0,
+			0,
+			0,
+			0,
+			0
+		]
 
