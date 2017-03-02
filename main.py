@@ -1,12 +1,11 @@
+
 import pygame;
 from settings import Settings;
-import sys;
 from background import Background;
-from zombie import Zombie;
 import game_functions as gf;
-from pygame.sprite import Group, groupcollide;
+from pygame.sprite import Group, groupcollide
+from zombie import Zombie;
 from square import Square;
-# from plant import Plant;
 from plant_icon import Plant_Icon;
 
 # def init_vars():
@@ -17,10 +16,10 @@ game_settings = Settings();
 screen = pygame.display.set_mode(game_settings.screen_size);
 pygame.display.set_caption ("DC Plants vs. Zombies Clone");
 background = Background(game_settings);
-peashooter_icon = Plant_Icon(game_settings, 'plant_icon.png', 1);
-gatling_icon = Plant_Icon(game_settings, 'Gatling_Pea_icon.png', 2);
-icons = [peashooter_icon, gatling_icon];
-
+peashooter_icon = Plant_Icon(game_settings,'peashooter-icon.png',1);
+gatling_icon = Plant_Icon(game_settings,'gatling-icon.png',2);
+sunflower_icon = Plant_Icon(game_settings,'sunflower.png',3);
+icons = [peashooter_icon,gatling_icon,sunflower_icon];
 # All our groups
 zombies = Group();
 plants = Group();
@@ -38,9 +37,8 @@ for i in range(0,5):
 def run_game():
 	tick = 0;
 	while 1:
+		gf.check_events(screen, game_settings, squares, plants,bullets, icons);
 		if game_settings.game_active:
-			gf.check_events(screen, game_settings, squares, plants,bullets, icons);
-		
 			# for event in pygame.event.get():
 			# 	if event.type == pygame.QUIT:
 			# 		sys.exit()
@@ -69,7 +67,7 @@ def run_game():
 					# when zombies die, remove them
 					game_settings.zombie_in_row[zombie.yard_row] -= 1;
 					game_settings.zombies_killed += 1;	
-		gf.update_screen(screen, game_settings, background, zombies,squares, plants, bullets, tick, icons);
+		gf.update_screen(screen,game_settings,background,zombies,squares,plants,bullets,tick,icons);
 		pygame.display.flip();
 
 # init_vars();

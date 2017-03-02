@@ -25,4 +25,4 @@ class Square(Sprite):
 		self.plant_here = False;
 
 
-		print self.square_number;
+		# print self.square_number;
