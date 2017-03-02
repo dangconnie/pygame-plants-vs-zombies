@@ -9,19 +9,22 @@ class Settings():
 		self.bg_color = (82,111,53);
 		self.zombie_speed = 5;
 		self.zombie_health = 5;
+		self.game_active = True;
+		self.chosen_plant = 1;
+		self.zombies_killed = 0;
 
 		# square stuff
 		self.squares = {
-			"start_left": 367,
-			"start_top": 246,
-			"square_width": 90,
-			"square_height": 90,
+			"start_left": 330,
+			"start_top": 220,
+			"square_width": 99,
+			"square_height": 91,
 			"rows":[
-				245,
-				350,
-				455, 
-				560, 
-				665
+				220,
+				311,
+				402, 
+				493, 
+				584
 			]
 		};
 		self.highlighted_square = 0;

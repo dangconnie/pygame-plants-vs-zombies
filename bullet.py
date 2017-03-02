@@ -1,6 +1,6 @@
 import pygame;
 from pygame.sprite import Sprite;
-from plant import Plant;
+# from plant import Plant;
 
 class Bullet(Sprite):
 	def __init__(self,screen,plant):
@@ -22,8 +22,7 @@ class Bullet(Sprite):
 		self.y = self.rect.y;
 
 	def update_me(self):
-		self.x += 20 * plant.shoot_speed;
-		# 
+		self.x += 20 * 2;
 		self.rect.x = self.x;
 
 	def draw_me(self):
