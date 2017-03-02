@@ -71,6 +71,7 @@ def update_screen(screen,game_settings,background,zombies,squares,plants,bullets
 		if zombie.rect.left <= zombie.screen_rect.left:
 			# if the left side of the zombie reaches the left side of the screen, game is stopped
 			game_settings.game_active = False;
+			zombie.moving = True;
 
 	for plant in plants:
 		plant.draw_me();

@@ -19,3 +19,4 @@ Add a new plan (gatlin gun is in the images folder), or make the repeater (doubl
 
 Notes:
 -we had to change bullet stats from boolean to integer. Otherwise, once the bellsprout hits a zombie, it won't fire again until a new one is created in that row.
+
